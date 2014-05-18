@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export ETCD_NAME=$(hostname)
+
+chown -R etcd:etcd ${ETCD_DATA_DIR}
+s6-setuidgid etcd /usr/bin/etcd
